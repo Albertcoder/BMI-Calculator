@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="BMICalculatorController">
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Clear" onAction="#clearFields"/>
+            <MenuItem text="Exit" onAction="#exitApp"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="About" onAction="#showHelp"/>
+        </Menu>
+    </MenuBar>
+    <Label text="BMI Calculator" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    <HBox spacing="10">
+        <Label text="Weight:"/>
+        <TextField fx:id="weightField" promptText="Enter weight"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Height:"/>
+        <TextField fx:id="heightField" promptText="Enter height"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Unit:"/>
+        <RadioButton text="Metric" fx:id="metricRadio" toggleGroup="$unitToggleGroup" selected="true"/>
+        <RadioButton text="Imperial" fx:id="imperialRadio" toggleGroup="$unitToggleGroup"/>
+    </HBox>
+    <Button text="Calculate BMI" onAction="#calculateBMI"/>
+    <Label fx:id="bmiResultLabel" style="-fx-font-size: 14px; -fx-text-fill: blue;"/>
+    <Label fx:id="bmiStatusLabel" style="-fx-font-size: 14px; -fx-text-fill: green;"/>
+</VBox>
